@@ -659,7 +659,7 @@
 
         .docs-list .content>.docs-list {
             border: 1px solid var(--gray100) !important;
-            border-radius: 0 0 8px 8px;
+            /* border-radius: 0 0 8px 8px; */
             margin: 0
         }
 
@@ -946,7 +946,7 @@
                 <button class="burger-button">☰</button>
                 <div class="versi" style="justify-content: space-between;width: 100%;">
                     <span>DOKUMENTASI</span>
-                    <span style="text-decoration: underline;">15-10-2023</span>
+                    <span style="text-decoration: underline;">19-11-2023</span>
                 </div>
             </div>
         </div>
@@ -995,6 +995,7 @@
                     <a onClick="anchorSummaryClicked();return false;" href="#penggunaan-contoh-state-management">Contoh State Management</a>
                     <a onClick="anchorSummaryClicked();return false;" href="#penggunaan-contoh-realtime-data">Contoh Realtime Data</a>
                     <a onClick="anchorSummaryClicked();return false;" href="#penggunaan-contoh-pembuatan-data-crud">Contoh Pembuatan Data CRUD</a>
+                    <a onClick="anchorSummaryClicked();return false;" href="#penggunaan-routes">Routes</a>
                 </div>
             </details>
             <details>
@@ -1015,6 +1016,7 @@
                 <div class="sidebar-group-wrapper">
                     <a onClick="anchorSummaryClicked();return false;" href="#update-package">Package.json</a>
                     <a onClick="anchorSummaryClicked();return false;" href="#update-composer">Composer.json</a>
+                    <a onClick="anchorSummaryClicked();return false;" href="#update-history">History</a>
                 </div>
             </details>
         </div>
@@ -5869,7 +5871,7 @@ setup(props) {
                                 </div>
                             </div>
                         </div>
-                        <span>Beberapa file yang perlu diperhatikan.</span>
+                        <span>Beberapa file yang perlu diperhatikan :</span>
 
                         <ul class="docs-list">
                             <li class="title">
@@ -5984,7 +5986,7 @@ Event: ChatEvent</code></pre>
                             </div>
                             <div class="pre-code-block">
                                 <pre><code class="language-treeview">[project_folder]/
-`-- app/
+|-- app/
 |   `-- Http/
 |       `-- Controllers/
 |           `-- Admin/
@@ -6148,6 +6150,263 @@ watch(() => props.uploads,
                         </div>
                     </div>
 
+                </div>
+
+            </section>
+
+            <section class="section" id="penggunaan-routes">
+
+                <div class="section-wrapper multiple">
+                    <div class="content">
+                        <h1><span class="anchor-ref"></span>Routes</h1>
+                        <p>Contoh penggunaan Routes / URL dari vue ke <code>routes.php</code>.</p>
+                        <p>Beberapa file-file yang perlu diperhatikan dalam contoh ini ialah : </p>
+                        <ul class="docs-list">
+                            <li class="title">
+                                <p>web.php</p>
+                            </li>
+                            <li class="content">
+                                <p>File ini digunakan untuk Routing API.</p>
+                            </li>
+                            <li class="title">
+                                <p>Menu.vue</p>
+                            </li>
+                            <li class="content">
+                                <p>Sebagai contoh file yang digunakan untuk simpan data dan refresh data.</p>
+                            </li>
+                            <li class="title">
+                                <p>StateManagement.vue</p>
+                            </li>
+                            <li class="content">
+                                <p>Sebagai contoh file halaman awal yang akan menuju ke file <code>DetailStateManagement.vue</code>.</p>
+                            </li>
+                            <li class="title">
+                                <p>DetailStateManagement.vue</p>
+                            </li>
+                            <li class="content">
+                                <p>Sebagai contoh file halaman yang akan kembali menuju ke file <code>StateManagement.vue</code>.</p>
+                            </li>
+                        </ul>
+                    </div>      
+                    <div class="sidenote">
+                        <div class="box">
+                            <div class="title">
+                                <p>Direktori File yang dicontohkan</p>
+                            </div>
+                            <div class="pre-code-block">
+                                <pre><code class="language-treeview">[project_folder]/
+|-- routes/
+|   `-- web.php
+`-- resources/
+    `-- js/
+        `-- Pages/
+            `-- Admin/
+                |-- Menus/
+                |   `-- Menu.vue
+                `-- TestStateManagement/
+                    |-- DetailStateManagement.vue
+                    `-- StateManagement.vue</code></pre>
+                            </div>
+                        </div>
+                    </div>              
+                </div>
+                <div class="section-wrapper multiple">
+                    <div class="content">
+                        <div style="margin-bottom: 15px;">
+                            <h5 style="font-size: 16.5px;">web.php</h5>
+                            <span>Beberapa kode yang perlu diperhatikan : </span>
+                            <ul class="docs-list">
+                                <li class="title">
+                                    <p>Route::get('/',...</p>
+                                </li>
+                                <li class="content">
+                                    <p>Kode ini untuk redirect ke fungsi <code>index</code>.</p>
+                                </li>
+                                <li class="title">
+                                    <p>Route::get('/storeMenu',...</p>
+                                </li>
+                                <li class="content">
+                                    <p>Kode ini untuk redirect ke fungsi <code>store</code>.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidenote">
+                        <div class="box">
+                            <div class="pre-code-block rounded-block">
+                                <pre class="no-line-numbers"><code class="language-php">...
+Route::prefix('menu')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Admin\MenuController::class,'index'])->name('menu');
+    ...
+    Route::post('/storeMenu', [\App\Http\Controllers\Admin\MenuController::class,'store']);
+});
+...</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-wrapper multiple">
+                    <div class="content">
+                        <div style="margin-bottom: 15px;">
+                            <h5 style="font-size: 16.5px;">Menu.vue</h5>
+                            <span>Jadi halaman menu ini ada di URL <code>http://localhost:8000/admin/menu</code>.</span>
+                            <br>
+                            <span>Beberapa kode yang perlu diperhatikan : </span>
+                            <ul class="docs-list">
+                                <li class="title">
+                                    <p>'./menu'</p>
+                                </li>
+                                <li class="content">
+                                    <p>Contoh halaman yang digunakan ialah <b style="font-weight: 700;">Menu</b> jadi untuk halaman <code>get</code> awal dalam url yang digunakan di <code>.vue</code> maka dari <b style="font-weight: 700;">prefix</b> nama di <code>web.php</code>.</p>
+                                </li>
+                                <li class="title">
+                                    <p>'./menu/storeMenu'</p>
+                                </li>
+                                <li class="content">
+                                    <p>Jadi jika ingin mengakses <code>Route::post('/storeMenu',...</code> di <code>web.php</code> yaitu menyimpan data menu maka url tersebut <code>./[halaman utama]/[url yang diinginkan]</code>.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidenote">
+                        <div class="box">
+                            <div class="pre-code-block rounded-block">
+                                <pre class="no-line-numbers"><code class="language-javascript">...
+layout: () => {
+    Inertia.get('./menu', {
+        layout: form.layout
+    }, {
+        preserveState: true,
+    });
+}
+
+...
+
+save: () => {
+    ...
+    Inertia.post('./menu/storeMenu', {
+        data: arrayMenu
+    }, {
+        onSuccess: (result) => {
+            globalVariable.$toast.add({ 
+                severity: 'success', 
+                summary: 'SUKSES', 
+                detail: 'Berhasil Simpan Menu', 
+                life: 3000
+            });
+        },
+        onError: (error) => console.log(error)
+    });
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-wrapper multiple">
+                    <div class="content">
+                        <div style="margin-bottom: 15px;">
+                            <h5 style="font-size: 16.5px;">web.php</h5>
+                            <span>Beberapa kode yang perlu diperhatikan : </span>
+                            <ul class="docs-list">
+                                <li class="title">
+                                    <p>Route::get('/',...</p>
+                                </li>
+                                <li class="content">
+                                    <p>Kode ini untuk redirect ke fungsi <code>index</code>.</p>
+                                </li>
+                                <li class="title">
+                                    <p>Route::get('/detail',...</p>
+                                </li>
+                                <li class="content">
+                                    <p>Kode ini untuk redirect ke halaman <code>detail</code>.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidenote">
+                        <div class="box">
+                            <div class="pre-code-block rounded-block">
+                                <pre class="no-line-numbers"><code class="language-php">...
+Route::prefix('testStateManagement')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Admin\TestStateManagementController::class,'index'])->name('testStateManagement');
+    Route::get('/detail', [\App\Http\Controllers\Admin\TestStateManagementController::class,'detail']);
+});
+...</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-wrapper multiple">
+                    <div class="content">
+
+                        <div class="box">
+                            <div class="title">
+                                <span>StateManagement.vue</span>
+                            </div>
+                            <div class="pre-code-block">
+                              <pre class="no-line-numbers"><code class="language-javascript">...
+send: () => {
+    ...
+    Inertia.get("./testStateManagement/detail", {}, {
+        preserveState: true,
+        onBefore: () => {
+            replacedPerhitungan(selectedData.value);
+        },
+    });
+}
+...</code></pre>  
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="content content-full">
+
+                        <div class="box">
+                            <div class="title">
+                                <span>DetailStateManagement.vue</span>
+                            </div>
+                            <div class="pre-code-block">
+                                <pre class="no-line-numbers"><code class="language-javascript">...
+back: () => {
+    Inertia.get("./", {}, {
+        preserveState: true,
+        onBefore: () => {
+            replacedPerhitungan();
+        },
+    });
+}
+...</code></pre>  
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="section-wrapper">
+                    <div class="content">
+                            <span>Beberapa file yang perlu diperhatikan :</span>
+                            <ul class="docs-list">
+                                <li class="title">
+                                    <p>"./testStateManagement/detail"</p>
+                                </li>
+                                <li class="content">
+                                    <p>Jadi jika ingin mengakses <code>DetailStateManagement.vue</code> maka url tersebut <code>./[halaman utama]/[url yang diinginkan]</code>.</p>
+                                </li>
+                                <li class="title">
+                                    <p>"./"</p>
+                                </li>
+                                <li class="content">
+                                    <p>Jika ingin kembali ke halaman sebelumnya jangan memakai <code>window.history.back()</code> maka cukup panggil url <code>"./"</code>.</p>
+                                </li>
+                            </ul>
+    
+                            <blockquote>
+                                <p>
+                                    <span style="font-weight: 700;">PERHATIAN</span> : <br>
+                                    Jadi URL aksi mengacu pada URI terakhir dalam contoh yang sudah ada seperti <code>http://localhost:8000/admin/menu</code> maka URL/halaman aktif ialah <code>menu</code> jadi jika ingin memanggil URL untuk simpan data, menghapus data dan mengubah data maka URL tersebut <code>./menu/[URL aksi]</code> dan jika ingin halaman ke sebelumnya seperti contoh <code>http://localhost:8000/admin/testStateManagement/detail</code> ke halaman <code>testStateManagement</code> maka cukup <code>./</code>.
+                                </p>
+                            </blockquote>
+                        
+                    </div>               
                 </div>
 
             </section>
@@ -7022,6 +7281,45 @@ export default {
                         </div>
 
                         (<a href="https://stackoverflow.com/questions/52593987/update-composer-dependencies-in-json-file-on-updating" target="_blank" rel="noopener noreferrer" style="font-style: italic;">Source</a>)
+
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section" id="update-history">
+
+                <div class="section-wrapper">
+                    <div class="content content-full">
+
+                        <h1><span class="anchor-ref"></span>History</h1>
+
+                        <div style="margin-bottom: 15px;">
+                            <p>Informasi terkait update apakah ada error atau tidaknya.</p>
+                            <h5 style="font-size: 16.5px;">Tanggal Update :</h5>
+                            <ul class="docs-list">
+                                <li class="title">
+                                    <p>19-11-2023</p>
+                                </li>
+                                <li class="content">
+                                    <ul class="docs-list">
+                                        <li class="title">
+                                            <p>Implementasi Proyek 1 ✅</p>
+                                        </li>
+                                        <li class="content">
+                                            <p>Tidak ada error</p>
+                                        </li>
+                                        <li class="title">
+                                            <p>Implementasi Proyek 2 ✅</p>
+                                        </li>
+                                        <li class="content">
+                                            <p>Tidak ada error</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- ❌ -->
+                            </ul>
+                        </div>
 
                     </div>
 
