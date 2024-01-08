@@ -946,7 +946,7 @@
                 <button class="burger-button">☰</button>
                 <div class="versi" style="justify-content: space-between;width: 100%;">
                     <span>DOKUMENTASI</span>
-                    <span style="text-decoration: underline;">19-11-2023</span>
+                    <span style="text-decoration: underline;">09-01-2024</span>
                 </div>
             </div>
         </div>
@@ -1007,6 +1007,7 @@
                     <a onClick="anchorSummaryClicked();return false;" href="#kekurangan-dynamic-dialog">Dynamic Dialog</a>
                     <a onClick="anchorSummaryClicked();return false;" href="#kekurangan-button-button-set">Button:Button Set</a>
                     <a onClick="anchorSummaryClicked();return false;" href="#kekurangan-file-upload">File Upload</a>
+                    <a onClick="anchorSummaryClicked();return false;" href="#kekurangan-image">Image</a>
                 </div>
             </details>
             <details>
@@ -1755,7 +1756,7 @@ watch(locale, (val) => {
                                 <p>Hasilnya</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="multi-bahasa/multi-bahasa.gif" alt="menu">
+                                <img src="imgs/multi-bahasa/multi-bahasa.gif" alt="menu">
                             </div>
                         </div>
     
@@ -1780,7 +1781,7 @@ watch(locale, (val) => {
                                 <p>Normal</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="tema-public/normal.png" alt="menu">
+                                <img src="imgs/tema-public/normal.png" alt="menu">
                             </div>
                         </div>
                     </div>
@@ -1790,7 +1791,7 @@ watch(locale, (val) => {
                                 <p>Landing</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="tema-public/landing.png" alt="menu">
+                                <img src="imgs/tema-public/landing.png" alt="menu">
                             </div>
                         </div>
                     </div>
@@ -2101,7 +2102,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';</co
 ...
 
 loading(); //muat fungsi loading();
-Inertia.post(url, {parameter}, {
+router.post(url, {parameter}, {
     onSuccess: () => {
         unloading(); //muat fungsi unloading();
     },
@@ -2252,7 +2253,7 @@ axios.post(url, {parameter})
                                 <p>Halaman Menu</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="menu/menu.png" alt="menu">
+                                <img src="imgs/menu/menu.png" alt="menu">
                             </div>
                         </div>
                     </div>
@@ -2376,7 +2377,7 @@ axios.post(url, {parameter})
                                 <p>Formulir Tambah</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="menu/tambah.png" alt="menu">
+                                <img src="imgs/menu/tambah.png" alt="menu">
                             </div>
                         </div>
                     </div>
@@ -2407,7 +2408,7 @@ axios.post(url, {parameter})
                                 <p>Tampilan Halaman Role</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="role/role.png" alt="menu">
+                                <img src="imgs/role/role.png" alt="menu">
                             </div>
                         </div>
 
@@ -2466,7 +2467,7 @@ axios.post(url, {parameter})
                                 <p>Formulir Tambah</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="role/tambah.png" alt="menu">
+                                <img src="imgs/role/tambah.png" alt="menu">
                             </div>
                         </div>
                     </div>
@@ -2562,7 +2563,7 @@ axios.post(url, {parameter})
                                 <p>Tampilan Halaman users</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="users/users.png" alt="menu">
+                                <img src="imgs/users/users.png" alt="menu">
                             </div>
                         </div>
                     </div>                    
@@ -2621,7 +2622,7 @@ axios.post(url, {parameter})
                                 <p>Formulir Tambah</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="users/tambah.png" alt="menu">
+                                <img src="imgs/users/tambah.png" alt="menu">
                             </div>
                         </div>                        
 
@@ -2656,7 +2657,7 @@ axios.post(url, {parameter})
                                 <p>Tampilan Halaman Upload Configurations</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="upload-configurations/upload-configurations.png" alt="menu">
+                                <img src="imgs/upload-configurations/upload-configurations.png" alt="menu">
                             </div>
                         </div>
 
@@ -2774,7 +2775,7 @@ axios.post(url, {parameter})
                                 <p>Formulir Tambah</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="upload-configurations/tambah.png" alt="menu">
+                                <img src="imgs/upload-configurations/tambah.png" alt="menu">
                             </div>
                         </div>                        
                     </div>
@@ -2794,7 +2795,7 @@ axios.post(url, {parameter})
                                 <p>Contoh Tampilan Formulir</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="upload/single-basic.png" alt="menu">
+                                <img src="imgs/upload/single-basic.png" alt="menu">
                             </div>
                         </div>
 
@@ -2963,7 +2964,7 @@ export default {
                         });
                     },
                     uploader: () =&gt; {
-                        Inertia.post(route(&quot;storeTestUpload&quot;),
+                        router.post(route(&quot;storeTestUpload&quot;),
                             {
                                 files: form.fileUploadSingleBasic,
                                 id_file_configurations: id_upload,
@@ -3182,7 +3183,7 @@ class UploadController extends Controller
                                 <p>Hasilnya</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="upload/single-basic.gif" alt="menu">
+                                <img src="imgs/upload/single-basic.gif" alt="menu">
                             </div>
                         </div>
                     </div>
@@ -3201,7 +3202,7 @@ class UploadController extends Controller
                                 <p>Contoh Tampilan Formulir</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="upload/single-input.png" alt="menu">
+                                <img src="imgs/upload/single-input.png" alt="menu">
                             </div>
                         </div>
 
@@ -3382,7 +3383,7 @@ export default {
                         });
                     },
                     click: () =&gt; {
-                        Inertia.post(route(&quot;storeTestUpload&quot;),
+                        router.post(route(&quot;storeTestUpload&quot;),
                             {
                                 files: form.fileUploadSingleInput,
                                 id_file_configurations: id_upload
@@ -3633,7 +3634,7 @@ class UploadController extends Controller
                                 <p>Hasilnya</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="upload/single-input.gif" alt="menu">
+                                <img src="imgs/upload/single-input.gif" alt="menu">
                             </div>
                         </div>
                     </div>
@@ -3651,7 +3652,7 @@ class UploadController extends Controller
                                 <p>Contoh Tampilan Formulir</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="upload/single-in-multiple-data.png" alt="menu">
+                                <img src="imgs/upload/single-in-multiple-data.png" alt="menu">
                             </div>
                         </div>
 
@@ -3864,7 +3865,7 @@ export default {
                         form.fileUploadSingleInMultipleData.push(event.files[0]);
                     },
                     click: () =&gt; {
-                        Inertia.post(route(&quot;storeTestUpload&quot;),
+                        router.post(route(&quot;storeTestUpload&quot;),
                             {
                                 data_file: form.fileUploadSingleInMultipleData,
                                 id_file_configurations: id_upload,
@@ -4110,7 +4111,7 @@ class UploadController extends Controller
                                 <p>Hasilnya</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="upload/single-multiple-in-table.gif" alt="menu">
+                                <img src="imgs/upload/single-multiple-in-table.gif" alt="menu">
                             </div>
                         </div>
 
@@ -4137,7 +4138,7 @@ class UploadController extends Controller
                                 <p>Contoh Tampilan Formulir</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="upload/single-object.png" alt="menu">
+                                <img src="imgs/upload/single-object.png" alt="menu">
                             </div>
                         </div>
                         <p>Contoh penggunaan Upload Single Object ini digunakan jika ada file yang tidak diisi</p>
@@ -4443,7 +4444,7 @@ export default {
                         });
                     },
                     click: () =&gt; {
-                        Inertia.post(route(&quot;storeTestUpload&quot;),
+                        router.post(route(&quot;storeTestUpload&quot;),
                             {
                                 files: form.fileUploadSingleObject,
                                 id_file_configurations_object1: id_upload1,
@@ -4719,7 +4720,7 @@ class UploadController extends Controller
                                 <p>Hasilnya</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="upload/single-object.gif" alt="menu">
+                                <img src="imgs/upload/single-object.gif" alt="menu">
                             </div>
                         </div>
                     </div>
@@ -4738,7 +4739,7 @@ class UploadController extends Controller
                                 <p>Contoh Tampilan Formulir</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="arsip/arsip.png" alt="menu">
+                                <img src="imgs/arsip/arsip.png" alt="menu">
                             </div>
                         </div>
 
@@ -4799,7 +4800,7 @@ export default {
         const methods = {
                 fileupload: {
                     zip:() => {
-                        Inertia.post(route("zippedFiles"),
+                        router.post(route("zippedFiles"),
                         {
                             data_file: [file, file, file],
                         }
@@ -4938,7 +4939,7 @@ class UploadController extends Controller
                                 <p>Tampilan Halaman</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="email/email.png" alt="menu">
+                                <img src="imgs/email/email.png" alt="menu">
                             </div>
                         </div>
                     </div>                    
@@ -5124,7 +5125,7 @@ class TestEmailController extends Controller
                                 <p>Tampilan Halaman</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="state-management/state-management.png" alt="menu">
+                                <img src="imgs/state-management/state-management.png" alt="menu">
                             </div>
                         </div>
                     </div>                    
@@ -5508,7 +5509,7 @@ export default {
                                     <p>Hasilnya</p>
                                 </div>
                                 <div class="pre-code-block other">
-                                    <img src="state-management/state-management.gif" alt="menu">
+                                    <img src="imgs/state-management/state-management.gif" alt="menu">
                                 </div>
                             </div>
                         </div>                    
@@ -5527,7 +5528,7 @@ export default {
                                 <p>Tampilan Halaman</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="realtime/realtime.png" alt="menu">
+                                <img src="imgs/realtime/realtime.png" alt="menu">
                             </div>
                         </div>
                         <p>Realtime ini menggunakan <a href="https://www.npmjs.com/package/laravel-echo" target="_blank" rel="noopener noreferrer">Laravel Echo</a>, <a href="https://redis.io/" target="_blank" rel="noopener noreferrer">Redis</a> (<b style="font-weight: 700;">Sebaiknya diinstal terlebih dahulu</b>) dan <a href="https://socket.io/" target="_blank" rel="noopener noreferrer">Socket IO</a>.</p>
@@ -5797,7 +5798,7 @@ import AppLayout from &#39;@/Layouts/Admin/AppLayout.vue&#39;;
 import { reactive, getCurrentInstance } from &#39;vue&#39;;
 import { Inertia } from &#39;@inertiajs/inertia&#39;;
 
-import { usePage } from &#39;@inertiajs/inertia-vue3&#39;;
+import { usePage } from &#39;@inertiajs/vue3&#39;;
 
 export default {
 layout: AppLayout,
@@ -5947,7 +5948,7 @@ Event: ChatEvent</code></pre>
                                     <p>Hasilnya</p>
                                 </div>
                                 <div class="pre-code-block other">
-                                    <img src="realtime/realtime.gif" alt="menu">
+                                    <img src="imgs/realtime/realtime.gif" alt="menu">
                                 </div>
                             </div>
                             
@@ -6284,7 +6285,7 @@ layout: () => {
 
 save: () => {
     ...
-    Inertia.post('./menu/storeMenu', {
+    router.post('./menu/storeMenu', {
         data: arrayMenu
     }, {
         onSuccess: (result) => {
@@ -6446,7 +6447,7 @@ back: () => {
                                 <p>Bukti</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="kekurangan/menubar.gif" alt="menu">
+                                <img src="imgs/kekurangan/menubar.gif" alt="menu">
                             </div>
                         </div>
                         <p>Dalam Bukti tersebut fokus menu ke <code>File2</code> sebelum adanya bug tersebut sudah diperbaiki <a href="https://github.com/primefaces/primevue/issues/3294" target="_blank" rel="noopener noreferrer">#3294</a> tetapi saat memakai Slots dari <a href="https://primevue.org/menubar/#api.menubar.slots.item" target="_blank" rel="noopener noreferrer">item</a> bug tersebut muncul.</p>
@@ -7052,7 +7053,7 @@ export default {
                                 <p>Hasil Penggunaan Default</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="kekurangan/buttonsetdefault.png" alt="menu">
+                                <img src="imgs/kekurangan/buttonsetdefault.png" alt="menu">
                             </div>
                         </div>
 
@@ -7062,7 +7063,7 @@ export default {
                                 <p>Hasil</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="kekurangan/buttonset1.png" alt="menu">
+                                <img src="imgs/kekurangan/buttonset1.png" alt="menu">
                             </div>
                         </div>
 
@@ -7072,7 +7073,7 @@ export default {
                                 <p>Hasil</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="kekurangan/buttonseta.png" alt="menu">
+                                <img src="imgs/kekurangan/buttonseta.png" alt="menu">
                             </div>
                         </div>
                         <p>Kenapa memakai tag element <code>a href</code>, kode element ini digunakan untuk button download file yang mengharuskan memakai <code>a href</code>.</p>
@@ -7167,7 +7168,7 @@ export default {
                                 <p>Bukti</p>
                             </div>
                             <div class="pre-code-block other">
-                                <img src="kekurangan/upload.gif" alt="menu">
+                                <img src="imgs/kekurangan/upload.gif" alt="menu">
                             </div>
                         </div>
                         <p>Dalam Bukti tersebut tampil <a href="https://primevue.org/message/" target="_blank" rel="noopener noreferrer">Message</a> yang tidak tepat.</p>
@@ -7205,6 +7206,95 @@ export default {
                             </div>
 
                         </div>
+                </div>
+
+                <div class="section-wrapper multiple">
+                    <div class="content content-full">                        
+                        <h5 style="font-weight: 700;">Alternatif : (belum ada)</h5>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="section" id="kekurangan-image">
+
+                <div class="section-wrapper multiple">
+                    <div class="content content-full">
+                        
+                        <h1><span class="anchor-ref"><a href="https://primevue.org/image/" target="_blank" rel="noopener noreferrer">Image</a></span></h1>
+                        <p>Kekurangan dari <a href="https://primevue.org/image/" target="_blank" rel="noopener noreferrer">Image</a> ketika gambar yang tampil menggunakan nama gambar teks atau kalimat maka kalimat tersebut menjadi 1 bagian saat nama gambar tersebut panjang dan background bayangan dari icon mata saat hover tidak kelihatan hal ini jika dipakai dengan tabel.</p>
+                        <div class="box">
+                            <div class="title">
+                                <p>Bukti</p>
+                            </div>
+                            <div class="pre-code-block other">
+                                <img src="imgs/kekurangan/imagepreview.gif" alt="imagepreview">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="section-wrapper multiple">
+                    <div class="content">
+                        <div style="margin-bottom: 15px;">
+                            <h5 style="font-weight: 700;">Cara Mengatasi : </h5>
+                            <span>Beberapa kode yang perlu diperhatikan yaitu :</span>
+                            <ul class="docs-list">
+                                <li class="title">
+                                    <p>&lt;p&gt;...&lt;/p&gt;</p>
+                                </li>
+                                <li class="content">
+                                    <p>Menambahkan tag <b style="font-weight: 700;">&lt;p&gt;&lt;/p&gt;</b> sebagai penampil nama gambar.</p>
+                                </li>
+                                <li class="title">
+                                    <p>display:table-cell;</p>
+                                </li>
+                                <li class="content">
+                                    <p>Menambahkan style display:table-cell untuk membungkus teks.</p>
+                                </li>
+                                <li class="title">
+                                    <p>vertical-align:middle;</p>
+                                </li>
+                                <li class="content">
+                                    <p>Menambahkan style vertical-align:middle; untuk diposisikan ditengah-tengah kolom.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sidenote">
+                        <div class="box">
+                            <div class="pre-code-block rounded-block">
+                                 <pre><code class="language-js">&lt;template&gt;
+    &lt;div class=&quot;card flex justify-content-center&quot;&gt;
+        &lt;Image alt=&quot;Image&quot; preview&gt;
+            &lt;template #indicatoricon&gt;
+                &lt;i class=&quot;pi pi-search&quot;&gt;&lt;/i&gt;
+            &lt;/template&gt;
+            &lt;template #image&gt;
+                &lt;p style=&quot;display: table-cell;vertical-align: middle;&quot;&gt;
+                    galleria-galleria-galleria-galleria11.jpg
+                &lt;/p&gt;
+
+            &lt;/template&gt;
+
+            &lt;template #preview=&quot;slotProps&quot;&gt;
+
+                &lt;img src=&quot;galleria-galleria-galleria-galleria11.jpg&quot; 
+                alt=&quot;preview&quot; 
+                :style=&quot;slotProps.style&quot; 
+                @click=&quot;slotProps.onClick&quot; /&gt;
+
+            &lt;/template&gt;
+        &lt;/Image&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="section-wrapper multiple">
@@ -7315,6 +7405,32 @@ export default {
                                         <li class="content">
                                             <p>Tidak ada error</p>
                                         </li>
+                                    </ul>
+                                </li>
+                                <li class="title">
+                                    <p>09-01-2024</p>
+                                </li>
+                                <li class="content">
+                                    <ul class="docs-list">
+                                        <li class="title">
+                                            <p>Error</p>
+                                        </li>
+                                        <li class="content">
+                                            <p><a href="https://ahrefs.com/blog/trailing-slash/" target="_blank">Trailing Slash</a> adalah garis miring ke depan ("/") yang ditempatkan di akhir URL seperti domain.com/ atau domain.com/page/. Hal ini membuat error di project untuk cara perbaikannya lihat dilink <a href="https://heikoklingele.de/blog/laravel-remove-trailing-slash-from-url-via-middleware" target="_blank">berikut</a>.</p>
+                                        </li>
+                                        <li class="title">
+                                            <p>Implementasi Proyek 1 ❌</p>
+                                        </li>
+                                        <li class="content">
+                                            <!-- target="_blank" -->
+                                            <p><a href="./history.html#09012024-simpan-role" rel="noopener noreferrer">Simpan Role</a></p>
+                                        </li>
+                                        <!-- <li class="title">
+                                            <p>Implementasi Proyek 2 ❌</p>
+                                        </li>
+                                        <li class="content">
+                                            <p>Slots Image Text</p>
+                                        </li> -->
                                     </ul>
                                 </li>
                                 <!-- ❌ -->
